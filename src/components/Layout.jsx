@@ -1,3 +1,4 @@
+import ErrorBoundary from './ErrorBoundary'
 import { Link, Outlet } from 'react-router-dom'
 
 function Layout() {
@@ -13,7 +14,9 @@ function Layout() {
         </header>
 
         <main>
-        <Outlet />
+        <ErrorBoundary>
+  <Outlet />
+</ErrorBoundary>
         </main>
     </div>
     )
